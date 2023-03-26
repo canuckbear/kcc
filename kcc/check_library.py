@@ -8,7 +8,7 @@
 # License.
 #
 #
-# Copyright 2017 SBIT project (http://www.firmwaretoolkit.org).
+# Copyright 2023 KCC project (http://www.firmwaretoolkit.org).
 # All rights reserved. Use is subject to license terms.
 #
 #
@@ -24,7 +24,7 @@ flag, invalid meta data, etc.
 """
 
 import logging
-from sbit.cli_command import CliCommand
+from kcc.cli_command import CliCommand
 
 #
 #    Class CheckLibrary

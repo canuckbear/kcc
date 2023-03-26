@@ -7,8 +7,7 @@
 # for the specific language governing rights and limitations under the
 # License.
 #
-#
-# Copyright 2017 SBIT project (http://www.firmwaretoolkit.org).
+# Copyright 2023 kcc project (http://www.firmwaretoolkit.org).
 # All rights reserved. Use is subject to license terms.
 #
 #
@@ -18,7 +17,7 @@
 #
 
 # Retrieve cueeznt package version
-SW_VERSION := $(shell grep sbit debian/changelog | tr \( \  | tr \) \  | tr \- \  | awk '{ print $$2 }' | sort -r | head -n 1 )
+SW_VERSION := $(shell grep kcc debian/changelog | tr \( \  | tr \) \  | tr \- \  | awk '{ print $$2 }' | sort -r | head -n 1 )
 PKG_DIR    := ..
 
 # ------------------------------------------------------------------------------
@@ -37,7 +36,7 @@ status:
 help:
 	@echo "Available targets are :"
 	@echo " requirements            Install all requirements using PIP"
-	@echo " package                 Build the Debian package sbit.deb"
+	@echo " package                 Build the Debian package kcc.deb"
 	@echo " test(s)                 Run unit tests"
 	@echo " help                    Display this help"
 
@@ -75,8 +74,8 @@ test:
 #
 
 package:
-	rm -f ../sbit_*.orig.tar.gz
-	tar cvfz ../sbit_$(SW_VERSION).orig.tar.gz --exclude=sbit/__pycache__ --exclude=build --exclude=sbit.egg-info --exclude=./.git --exclude-vcs-ignores --exclude-vcs-ignores *
+	rm -f ../kcc_*.orig.tar.gz
+	tar cvfz ../kcc_$(SW_VERSION).orig.tar.gz --exclude=kcc/__pycache__ --exclude=build --exclude=kcc.egg-info --exclude=./.git --exclude-vcs-ignores --exclude-vcs-ignores *
 	debuild -us -uc -b
 
 
@@ -88,14 +87,14 @@ package:
 #
 
 upload:
-	if [ "x" = "x$(SBIT_DEB_UPLOAD_SERVER)" ] ; then \
-		echo "        Variable SBIT_DEB_UPLOAD_SERVER is not set, please define it your shell environment." ; \
+	if [ "x" = "x$(kcc_DEB_UPLOAD_SERVER)" ] ; then \
+		echo "        Variable kcc_DEB_UPLOAD_SERVER is not set, please define it your shell environment." ; \
 	fi ;
-	if [ "x" = "x$(SBIT_DEB_UPLOAD_PATH)" ] ; then \
-		echo "        Variable SBIT_DEB_UPLOAD_PATH is not set, please define it your shell environment." ; \
+	if [ "x" = "x$(kcc_DEB_UPLOAD_PATH)" ] ; then \
+		echo "        Variable kcc_DEB_UPLOAD_PATH is not set, please define it your shell environment." ; \
 	fi ;
-	if [ "x" = "x$(SBIT_DEB_UPLOAD_USER)" ] ; then \
-		echo "        Variable SBIT_DEB_UPLOAD_USER is not set, please define it your shell environment." ; \
+	if [ "x" = "x$(kcc_DEB_UPLOAD_USER)" ] ; then \
+		echo "        Variable kcc_DEB_UPLOAD_USER is not set, please define it your shell environment." ; \
 	fi ;
-	scp $(PKG_DIR)/*.deb $(PKG_DIR)/*.buildinfo $(PKG_DIR)/*.orig.tar.gz $(PKG_DIR)/*.changes $(SBIT_DEB_UPLOAD_USER)@$(SBIT_DEB_UPLOAD_SERVER):$(SBIT_DEB_UPLOAD_PATH) ;
+	scp $(PKG_DIR)/*.deb $(PKG_DIR)/*.buildinfo $(PKG_DIR)/*.orig.tar.gz $(PKG_DIR)/*.changes $(kcc_DEB_UPLOAD_USER)@$(kcc_DEB_UPLOAD_SERVER):$(kcc_DEB_UPLOAD_PATH) ;
 

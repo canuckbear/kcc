@@ -1,2 +1,2 @@
-# sbit
-Simple Build In Tests
+# kcc
+Kernel Configuration Comparator

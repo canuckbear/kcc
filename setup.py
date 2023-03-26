@@ -8,16 +8,16 @@
 # License.
 #
 #
-# Copyright 2017 SBIT project (http://www.firmwaretoolkit.org).
+# Copyright 2023 KCC project (http://www.firmwaretoolkit.org).
 # All rights reserved. Use is subject to license terms.
 #
 #
 # Contributors list :
 #
-#    William Bonnet     wllmbnnt@gmail.com, wbonnet@theitmakers.com
+#    William Bonnet     wllmbnnt@gmail.com, wbonnet@firmwaretoolkit.org
 #
 
-from sbit.release import __version__, __author__, __author_email__
+from kcc.release import __version__, __author__, __author_email__
 
 try:
     from setuptools import setup
@@ -26,17 +26,18 @@ except ImportError:
     from distutils.core import setup
 
 config = {
-    'description': 'Simple Buid In Tests',
-    'long_description': 'SBIT is a tool designed to run Simple Build In Tests. Tests are defined in a YAML file describing a hierchical structure of tests. Tests themselves are bash scripts stored in a test library',
+    'description': 'Kernel Config File Comparator',
+
+    'long_description': 'KCC is a tool designed to execute comparisons and basic operations on Linux kernel config files. KCC can produce associated fragments accondring to the operation given as argument. The fragment will later be used with the merge_config.sh script from kernel sources',
     'author': __author__,
-    'url': 'https://github.com/wbonnet/sbit/',
-    'download_url': 'https://github.com/wbonnet/sbit/',
+    'url': 'https://github.com/canuckbear/kcc/',
+    'download_url': 'https://github.com/canuckbear/kcc/',
     'author_email': __author_email__,
     'version': __version__,
     'install_requires': [ 'pyyaml' ],
-    'packages': ['sbit'],
-    'scripts': [ 'bin/sbit' ],
-    'name': 'sbit'
+    'packages': ['kcc'],
+    'scripts': [ 'bin/kcc' ],
+    'name': 'kcc'
 }
 
 setup(**config)

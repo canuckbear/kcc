@@ -8,7 +8,7 @@
 # License.
 #
 #
-# Copyright 2017 SBIT project (http://www.firmwaretoolkit.org).
+# Copyright 2023 KCC project (http://www.firmwaretoolkit.org).
 # All rights reserved. Use is subject to license terms.
 #
 #
@@ -18,7 +18,7 @@
 #
 
 """ This module contains the class and the methods used to crate parsers dedicated to the
-different words of command supported by sbit.
+different words of command supported by kcc.
 
 The module will do actual processing and run the associated worker method
 (one of the run_foo methods)
@@ -27,15 +27,15 @@ The module will do actual processing and run the associated worker method
 import argparse
 import textwrap
 import logging
-from sbit.model import Key
-from sbit.model import Configuration
-from sbit import run_testsuite
-from sbit import check_testsuite
-from sbit import check_library
-from sbit import release
-# import sbit.run_testsuite
-# import sbit.check_testsuite
-# import sbit.check_library
+from kcc.model import Key
+from kcc.model import Configuration
+from kcc import run_testsuite
+from kcc import check_testsuite
+from kcc import check_library
+from kcc import release
+# import kcc.run_testsuite
+# import kcc.check_testsuite
+# import kcc.check_library
 
 # -----------------------------------------------------------------------------
 #
@@ -58,7 +58,7 @@ class Cli(object):
 
     # Create the internal parser from argparse
     self.parser = argparse.ArgumentParser(description=textwrap.dedent('''\
-SBIT - Simple Build In Test v''' + release.__version__ + '''
+KCC - Simple Build In Test v''' + release.__version__ + '''
 ----------------------------------
 
 Available commands are :
@@ -282,21 +282,21 @@ Available commands are :
     self.parser.add_argument(Key.OPT_FAIL_FAST.value,
                              action='store_true',
                              dest=Key.FAIL_FAST.value,
-                             help="If this flag is activated, sbit will stop at the first\n"
+                             help="If this flag is activated, kcc will stop at the first\n"
                                   "error encountered, otherwise it will continue to run\n"
                                   "as long as possible and will report all errors")
 
     self.parser.add_argument(Key.OPT_ONLY_ERRORS.value,
                              action='store_true',
                              dest=Key.ONLY_ERRORS.value,
-                             help="If this flag is activated, sbit will output only failed\n"
+                             help="If this flag is activated, kcc will output only failed\n"
                                   "tests. Success are taken in account, but not displayed\n"
                                   "to reduce output verbosity")
 
     self.parser.add_argument(Key.OPT_SHOW_HINTS.value,
                              action='store_true',
                              dest=Key.SHOW_HINTS.value,
-                             help="If this flag is activated, sbit will display hints when\n"
+                             help="If this flag is activated, kcc will display hints when\n"
                                   "the tests fails. Hints have to be defined in the tests\n"
                                   "scripts and are optional")
 

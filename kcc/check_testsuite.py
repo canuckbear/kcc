@@ -1,3 +1,4 @@
+
 #
 # The contents of this file are subject to the Apache 2.0 license you may not
 # use this file except in compliance with the License.
@@ -8,7 +9,7 @@
 # License.
 #
 #
-# Copyright 2017 SBIT project (http://www.firmwaretoolkit.org).
+# Copyright 2023 KCC project (http://www.firmwaretoolkit.org).
 # All rights reserved. Use is subject to license terms.
 #
 #
@@ -24,7 +25,7 @@ malformed yaml fragment, etc.
 """
 
 import logging
-from sbit.cli_command import CliCommand
+from kcc.cli_command import CliCommand
 
 #
 #    Class CheckTestSuite

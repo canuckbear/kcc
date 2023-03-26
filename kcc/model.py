@@ -8,7 +8,7 @@
 # License.
 #
 #
-# Copyright 2017 SBIT project (http://www.firmwaretoolkit.org).
+# Copyright 2023 KCC project (http://www.firmwaretoolkit.org).
 # All rights reserved. Use is subject to license terms.
 #
 #
@@ -17,7 +17,7 @@
 #    William Bonnet     wllmbnnt@gmail.com, wbonnet@theitmakers.com
 #
 
-""" This module contains the definition of the constants used in the sbit tool,
+""" This module contains the definition of the constants used in the kcc tool,
 and the definition of the configuration clsss. The class implements the methods
 used to load its content fom yaml configuration file.
 """
@@ -82,7 +82,7 @@ class Key(Enum):
 #
 # -----------------------------------------------------------------------------
 class Configuration(object):
-  """This class defines default configuration for sbit
+  """This class defines default configuration for kcc
 
   The tool configuration contains environment variables used to define
   information such as default working path, etc.
@@ -102,7 +102,7 @@ class Configuration(object):
 
     # Default configuration file to use if none is provided through the cli
     if filename is None:
-      self.filename = "~/.sbitrc"
+      self.filename = "~/.kccrc"
     else:
       self.filename = filename
 
@@ -156,7 +156,7 @@ class Configuration(object):
 
     # Check if configuration file exist in home ir, otherwise switch to package config file
     if not os.path.isfile(self.filename):
-      self.filename = "/etc/sbit/sbitrc"
+      self.filename = "/etc/kcc/kccrc"
 
     try:
       # Check it the configuration file exist

@@ -16,7 +16,7 @@
 # License.
 #
 #
-# Copyright 2017 SBIT project (http://www.firmwaretoolkit.org).
+# Copyright 2023 KCC project (http://www.firmwaretoolkit.org).
 # All rights reserved. Use is subject to license terms.
 #
 #
@@ -32,10 +32,10 @@ and run a test suite, either from top level category or from any midlevel or sub
 
 import logging
 import os
-from sbit.cli_command import CliCommand
-from sbit.model import Key
-from sbit.model import TestSuite
-from sbit.ansi_colors import Colors
+from kcc.cli_command import CliCommand
+from kcc.model import Key
+from kcc.model import TestSuite
+from kcc.ansi_colors import Colors
 
 # -----------------------------------------------------------------------------
 #
@@ -440,7 +440,7 @@ class RunTestSuite(CliCommand):
     and that a hint is defined in command in the script.
 
     Hints format are :
-    # @SBIT hint hint_code hit_message
+    # @KCC hint hint_code hit_message
 
     String hint_message is searched then returned. If no hint is available,
     an aempty string is returned.
@@ -465,8 +465,8 @@ class RunTestSuite(CliCommand):
 
       # Need at least five items on the line to be a match candidate
       if len(tokens) > 4:
-        # Check that this line structure is somethin like "# @SBIT hint hint_code _hint_message"
-        if tokens[0] == "#" and tokens[1].lower() == "@sbit" and tokens[2].lower() == "hint" and \
+        # Check that this line structure is somethin like "# @KCC hint hint_code _hint_message"
+        if tokens[0] == "#" and tokens[1].lower() == "@kcc" and tokens[2].lower() == "hint" and \
            tokens[3] == str(hint_code):
           # Yes :)  ten its a match, return the end of the line
           return " ".join(tokens[4:])
