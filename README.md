@@ -1,2 +1,2 @@
-# kcc
-Kernel Config file Compare
+# sbit
+Simple Build In Tests
