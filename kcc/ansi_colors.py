@@ -8,7 +8,7 @@
 # License.
 #
 #
-# Copyright 2017 SBIT project (http://www.firmwaretoolkit.org).
+# Copyright 2023 KCC project (http://www.firmwaretoolkit.org).
 # All rights reserved. Use is subject to license terms.
 #
 #

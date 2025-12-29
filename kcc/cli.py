@@ -29,13 +29,7 @@ import textwrap
 import logging
 from kcc.model import Key
 from kcc.model import Configuration
-from kcc import run_testsuite
-from kcc import check_testsuite
-from kcc import check_library
 from kcc import release
-# import kcc.run_testsuite
-# import kcc.check_testsuite
-# import kcc.check_library
 
 # -----------------------------------------------------------------------------
 #
@@ -66,6 +60,7 @@ Available commands are :
   . ''' + Key.CHECK_SUITE.value +  '''        Check the test suite consistency
   . ''' + Key.RUN_SUITE.value + '''           Execute the tests defined in the given suite file
 '''), formatter_class=argparse.RawTextHelpFormatter)
+# XXX la tu met les intersect et Autres
 
     # Stores the arguments from the parser
     self.args = None

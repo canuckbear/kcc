@@ -25,6 +25,6 @@ This information is intented to be used in the setup.py file, and cli.py (displa
 program version), etc.
 """
 
-__version__ = '0.0.1'
+__version__ = '0.0.2w'
 __author__ = 'William Bonnet'
-__author_email__ = 'william@firmware.toolkit.org'
+__author_email__ = 'william@firmwaretoolkit.org'
