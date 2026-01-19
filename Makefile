@@ -25,9 +25,20 @@ PKG_DIR    := ..
 # Run git status
 #
 status:
-	@echo "running git status in status"
+	@echo "running git status in topdir"
 	@echo
 	@git status
+
+# ------------------------------------------------------------------------------
+#
+# Run git pull
+#
+pull:
+	@echo "running git pull in status"
+	@echo
+	@git status
+
+
 
 # ------------------------------------------------------------------------------
 #
